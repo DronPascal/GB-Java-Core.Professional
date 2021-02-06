@@ -2,9 +2,10 @@ package hw1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Box<T extends Fruit> {
-    private ArrayList<T> fruitList;
+    private ArrayList<T> fruitList = new ArrayList<>();
     private String fruitName;
 
     public void addFruit(T fruit){

@@ -14,7 +14,7 @@ public class Main {
         System.out.println(Arrays.toString(arr));
 
         System.out.println(Arrays.toString(arr2));
-        swap(arr2, 0,4);
+        swap(arr2, 0, 4);
         System.out.println(Arrays.toString(arr2));
 
         //Task 2
@@ -23,7 +23,7 @@ public class Main {
         System.out.println(arrayList.toString());
 
         //Task3
-        Box<Apple> appleBox1= new Box<>();
+        Box<Apple> appleBox1 = new Box<>();
         Box<Apple> appleBox2 = new Box<>();
         Box<Orange> orangeBox1 = new Box<>();
         for (int i = 0; i < 10; i++) {
@@ -33,9 +33,15 @@ public class Main {
         for (int i = 0; i < 5; i++) {
             appleBox2.addFruit(new Apple());
         }
-        System.out.printf("Масса первой коробки с яблоками: "+ appleBox1.getWeight());
-        System.out.printf("Масса второй коробки с яблоками: "+ appleBox1.getWeight());
+        System.out.println("Масса первой коробки с яблоками: " + appleBox1.getWeight());
+        System.out.println("Масса второй коробки с яблоками: " + appleBox2.getWeight());
+        System.out.println("Масса коробки с апельсинами: " + orangeBox1.getWeight());
 
+        System.out.println("Пересыпаем из второй коробки в первую...");
+        appleBox2.pourOverTo(appleBox1);
+        System.out.println("Масса первой коробки с яблоками: " + appleBox1.getWeight());
+        System.out.println("Масса второй коробки с яблоками: " + appleBox2.getWeight());
+        System.out.println("Масса коробки с апельсинами: " + orangeBox1.getWeight());
     }
 
     static void swap(Object[] arr, int num1, int num2) {
@@ -44,7 +50,7 @@ public class Main {
         arr[num2] = buf;
     }
 
-    static <T> ArrayList<T> toArrayList(T[] arr){
+    static <T> ArrayList<T> toArrayList(T[] arr) {
         return new ArrayList<T>(Arrays.asList(arr));
     }
 }
