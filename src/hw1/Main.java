@@ -37,12 +37,14 @@ public class Main {
         System.out.println("Масса первой коробки с яблоками: " + appleBox1.getWeight());
         System.out.println("Масса второй коробки с яблоками: " + appleBox2.getWeight());
         System.out.println("Масса коробки с апельсинами: " + orangeBox1.getWeight());
+        System.out.println("Результат сравнения 1й коробки с яблоками и коробки с апельсинами: "+appleBox1.compare(orangeBox1));
 
-        System.out.println("Пересыпаем из второй коробки в первую...");
+        System.out.println("\nПересыпаем из второй коробки в первую...\n");
         appleBox2.pourOverTo(appleBox1);
         System.out.println("Масса первой коробки с яблоками: " + appleBox1.getWeight());
         System.out.println("Масса второй коробки с яблоками: " + appleBox2.getWeight());
         System.out.println("Масса коробки с апельсинами: " + orangeBox1.getWeight());
+        System.out.println("Результат сравнения 1й коробки с яблоками и коробки с апельсинами: "+appleBox1.compare(orangeBox1));
     }
 
     static void swap(Object[] arr, int num1, int num2) {
