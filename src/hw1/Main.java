@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         //Task 1
-        System.out.println("Task 1");
+        System.out.println("#Task 1");
         Integer[] arr = new Integer[]{1, 2, 3, 4, 5};
         String[] arr2 = new String[]{"a", "b", "c", "d", "e"};
         System.out.println(Arrays.toString(arr));
@@ -18,11 +18,12 @@ public class Main {
         System.out.println(Arrays.toString(arr2));
 
         //Task 2
-        System.out.println("\nTask 2");
+        System.out.println("\n#Task 2");
         ArrayList<String> arrayList = toArrayList(arr2);
         System.out.println(arrayList.toString());
 
         //Task3
+        System.out.println("\n#Task 3");
         Box<Apple> appleBox1 = new Box<>();
         Box<Apple> appleBox2 = new Box<>();
         Box<Orange> orangeBox1 = new Box<>();
