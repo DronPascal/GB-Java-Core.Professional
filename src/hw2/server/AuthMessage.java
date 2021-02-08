@@ -1,4 +1,4 @@
-package hw8.server;
+package hw2.server;
 
 public class AuthMessage {
     private String login;

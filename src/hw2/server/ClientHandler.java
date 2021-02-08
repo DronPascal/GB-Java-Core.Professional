@@ -1,4 +1,4 @@
-package hw8.server;
+package hw2.server;
 
 import com.google.gson.Gson;
 
@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class ClientHandler {
-    private final long TIMEOUT = 2;
+    private final long TIMEOUT = 120;
 
     private Socket socket;
     private MyServer myServer;
@@ -29,6 +29,10 @@ public class ClientHandler {
                 try {
                     authentication();
                     readMessages();
+                    if (System.currentTimeMillis()-birthTime>1000*TIMEOUT) {
+                        closeConnection();
+                        return;
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 } finally {
@@ -58,11 +62,6 @@ public class ClientHandler {
     private void authentication() {
         while (true) {
             try {
-                if (System.currentTimeMillis()-birthTime>1000*TIMEOUT) {
-                    thread.interrupt();
-                    socket.close();
-                    return;
-                }
                 AuthMessage message = new Gson().fromJson(dataInputStream.readUTF(), AuthMessage.class);
                 String nick = myServer.getAuthService().getNickByLoginAndPass(message.getLogin(), message.getPassword());
                 if (nick != null && !myServer.isNickBusy(nick)) {

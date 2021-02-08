@@ -1,4 +1,4 @@
-package hw8.server;
+package hw2.server;
 
 import java.util.ArrayList;
 import java.util.List;

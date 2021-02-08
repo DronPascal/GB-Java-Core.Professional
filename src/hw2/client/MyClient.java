@@ -1,6 +1,6 @@
-package hw8.client;
+package hw2.client;
 
-import hw8.server.Message;
+import hw2.server.Message;
 
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
