@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class ClientHandler {
-    private final long TIMEOUT = 120;
+    private final long TIMEOUT = 5;
 
     private Socket socket;
     private MyServer myServer;
@@ -27,12 +27,13 @@ public class ClientHandler {
             this.dataOutputStream = new DataOutputStream(socket.getOutputStream());
             thread = new Thread(() -> {
                 try {
+//                    System.out.println(System.currentTimeMillis() - birthTime);
+//                    if (System.currentTimeMillis() - birthTime > 1000 * TIMEOUT) {
+//                        closeConnection();
+//                        return;
+//                    }
                     authentication();
                     readMessages();
-                    if (System.currentTimeMillis()-birthTime>1000*TIMEOUT) {
-                        closeConnection();
-                        return;
-                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 } finally {
