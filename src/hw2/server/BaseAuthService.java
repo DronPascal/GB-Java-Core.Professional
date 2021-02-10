@@ -6,9 +6,12 @@ import java.util.List;
 public class BaseAuthService implements AuthService {
     private DBManager dbManager;
 
+    public BaseAuthService(DBManager dbManager) {
+        this.dbManager = dbManager;
+    }
+
     @Override
     public void start() {
-        dbManager = new DBManager();
         System.out.println("Сервис авторизации запущен");
     }
 

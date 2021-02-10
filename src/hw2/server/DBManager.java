@@ -12,6 +12,7 @@ public class DBManager {
             if (connection != null) {
                 System.out.println("Соединение установлено!");
                 statement = connection.createStatement();
+                addRecords();
             }
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
@@ -29,17 +30,24 @@ public class DBManager {
         }
     }
 
-    public String getNickByLoginAndPass(String login, String password){
+    public String getNickByLoginAndPass(String login, String password) {
         String nick;
         try {
             ResultSet resultSet = statement.executeQuery("select nickname from users where login=\"" + login + "\" and password=\"" + password + "\"");
             nick = resultSet.getString(1);
             //System.out.println(nick);
             return nick;
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
         }
         return null;
+    }
+
+    public void changeNick(String oldNick, String newNick) {
+        try {
+            statement.executeUpdate("update 'users' set nickname=\""+newNick+"\" where nickname=\""+oldNick+"\"");
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+        }
     }
 }

@@ -100,6 +100,7 @@ public class ClientHandler {
                 case "/w": {// /w <nick> <message>
                     if (tokens.length < 3) {
                         Message msg = new Message();
+                        msg.setNick("Сервер");
                         msg.setMessage("Не хватает параметров, необходимо отправить команду следующего вида: /w <ник> <сообщение>");
                         this.sendMessage(msg);
                     }
@@ -110,6 +111,18 @@ public class ClientHandler {
                         msg.append(tokens[i]);
                     }
                     myServer.sendMsgToClient(this, nick, msg.toString());
+                    break;
+                }
+                case "/setnick": {
+                    if (tokens.length < 2) {
+                        Message msg = new Message();
+                        msg.setNick("Сервер");
+                        msg.setMessage("Не хватает параметров, необходимо отправить команду следующего вида: /setnick <ник>");
+                        this.sendMessage(msg);
+                        return;
+                    }
+                    String newnick = tokens[1];
+                    myServer.getDbManager().changeNick(nick, newnick);
                     break;
                 }
             }

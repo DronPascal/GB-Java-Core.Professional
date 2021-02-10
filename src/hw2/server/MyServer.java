@@ -11,10 +11,16 @@ public class MyServer {
 
     private List<ClientHandler> clients;
     private AuthService authService;
+    private DBManager dbManager;
+
+    public DBManager getDbManager() {
+        return dbManager;
+    }
 
     public MyServer() {
+        dbManager = new DBManager();
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {
-            authService = new BaseAuthService();
+            authService = new BaseAuthService(dbManager);
             authService.start();
             clients = new ArrayList<>();
             while (true) {
