@@ -8,7 +8,7 @@ public class DBManager {
 
     public DBManager() {
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:src/hw2/resources/sqlite_db.s3db");
+            connection = DriverManager.getConnection("jdbc:sqlite:src/hw3/resources/sqlite_db.s3db");
             if (connection != null) {
                 System.out.println("Соединение установлено!");
                 statement = connection.createStatement();

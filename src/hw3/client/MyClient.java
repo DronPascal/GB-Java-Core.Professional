@@ -3,17 +3,20 @@ package hw3.client;
 import hw3.server.Message;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.Dimension;
 import java.io.IOException;
 
 public class MyClient extends JFrame {
 
     private ServerService serverService;
+    private ChatHistoryManager chatHistoryManager;
 
     public MyClient() {
         super("Чат");
+        chatHistoryManager = new ChatHistoryManager();
+
         serverService = new SocketServerService();
         serverService.openConnection();
         JPanel jPanel = new JPanel();
@@ -84,6 +87,9 @@ public class MyClient extends JFrame {
                     password.setVisible(false);
                     authButton.setVisible(false);
 
+                    chatHistoryManager.restoreChat(mainChat);
+                    chatHistoryManager.startChatLogging();
+
                     new Thread(() -> {
                         while (true) {
                             printToUI(mainChat, serverService.readMessages());
@@ -112,8 +118,9 @@ public class MyClient extends JFrame {
     }
 
     private void printToUI(JTextArea mainChat, Message message) {
-        mainChat.append("\n");
-        mainChat.append((message.getNick() != null ? message.getNick() : "Сервер") + " написал: " + message.getMessage());
+        String msg = "\n"+(message.getNick() != null ? message.getNick() : "Сервер") + " написал: " + message.getMessage();
+        mainChat.append(msg);
+        chatHistoryManager.append(msg);
     }
 
 
