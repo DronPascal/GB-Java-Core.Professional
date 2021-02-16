@@ -39,7 +39,7 @@ public class MyServer {
         } finally {
             if (authService != null) {
                 authService.stop();
-                executorService.shutdown();
+                executorService.shutdownNow();
             }
         }
     }
