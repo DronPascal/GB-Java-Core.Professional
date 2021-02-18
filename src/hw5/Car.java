@@ -34,11 +34,11 @@ public class Car implements Runnable {
     }
 
     public void setCountDownLatch(CountDownLatch countDownLatch) {
-        this.finishCountDownLatch = countDownLatch;
+        finishCountDownLatch = countDownLatch;
     }
 
     public void setCyclicBarrier(CyclicBarrier cyclicBarrier) {
-        this.startCyclicBarrier = cyclicBarrier;
+        startCyclicBarrier = cyclicBarrier;
     }
 
     public void setSemaphore(Semaphore semaphore) {
