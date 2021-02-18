@@ -65,7 +65,8 @@ public class Car implements Runnable {
                 }
                 nextStage.go(this);
                 tunnelSemaphore.release();
-            }
+            } else
+                nextStage.go(this);
         }
         finishCountDownLatch.countDown();
     }
