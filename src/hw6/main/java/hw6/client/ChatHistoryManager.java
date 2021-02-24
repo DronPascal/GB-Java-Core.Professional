@@ -7,7 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class ChatHistoryManager {
-    private static final String filename = "src/main/resources/chat_history.txt";
+    private static final String filename = "src/hw6/main/resources/chat_history.txt";
     private FileWriter fileWriter;
     private int msgCount = 0;
 
