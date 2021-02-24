@@ -1,5 +1,8 @@
 package hw6.server;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -12,6 +15,7 @@ public class MyServer {
     private List<ClientHandler> clients;
     private AuthService authService;
     private DBManager dbManager;
+    public final static Logger LOG = LogManager.getLogger(MyServer.class);
 
     public DBManager getDbManager() {
         return dbManager;
@@ -25,9 +29,9 @@ public class MyServer {
             authService.start();
             clients = new ArrayList<>();
             while (true) {
-                LogManager.LOG.trace("Ожидаем поключение клиентов");
+                LOG.trace("Ожидаем поключение клиентов");
                 Socket socket = serverSocket.accept();
-                LogManager.LOG.trace("Клиент подключился");
+                LOG.trace("Клиент подключился");
                 new ClientHandler(this, socket);
             }
         } catch (IOException e) {
@@ -52,7 +56,7 @@ public class MyServer {
     public synchronized void sendMsgToClient(ClientHandler from, String nickTo, String msg) {
         for (ClientHandler client : clients) {
             if (client.getNick().equals(nickTo)) {
-                LogManager.LOG.trace("Отправляем личное сообщение от " + from.getNick() + ", кому " + nickTo);
+                LOG.trace("Отправляем личное сообщение от " + from.getNick() + ", кому " + nickTo);
                 Message message = new Message();
                 message.setNick(from.getNick());
                 message.setMessage(msg);
@@ -60,7 +64,7 @@ public class MyServer {
                 return;
             }
         }
-        LogManager.LOG.trace("Клиент с ником " + nickTo + " не подюклчен к чату");
+        LOG.trace("Клиент с ником " + nickTo + " не подюклчен к чату");
         Message message = new Message();
         message.setMessage("Клиент с этим ником не подключен к чату");
         from.sendMessage(message);

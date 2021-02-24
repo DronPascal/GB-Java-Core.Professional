@@ -9,12 +9,12 @@ public class BaseAuthService implements AuthService {
 
     @Override
     public void start() {
-        LogManager.LOG.trace("Сервис авторизации запущен");
+        MyServer.LOG.trace("Сервис авторизации запущен");
     }
 
     @Override
     public void stop() {
-        LogManager.LOG.trace("Сервис авторизации остановлен");
+        MyServer.LOG.trace("Сервис авторизации остановлен");
     }
 
     @Override

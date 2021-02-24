@@ -10,13 +10,13 @@ public class DBManager {
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:src/hw6/main/resources/sqlite_db.s3db");
             if (connection != null) {
-                LogManager.LOG.trace("Соединение c БД установлено");
+                MyServer.LOG.trace("Соединение c БД установлено");
                 statement = connection.createStatement();
                 addRecords();
             }
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
-            LogManager.LOG.trace("Ошибка подключения к БД!");
+            MyServer.LOG.trace("Ошибка подключения к БД!");
         }
     }
 
