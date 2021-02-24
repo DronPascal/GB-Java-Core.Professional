@@ -9,5 +9,7 @@ public class ClientApp {
     public static void main(String[] args) {
         new MyClient().setVisible(true);
         final Logger LOG = LogManager.getLogger(String.valueOf(ClientApp.class));
+
+        LOG.error("dfdfasd");
     }
 }
