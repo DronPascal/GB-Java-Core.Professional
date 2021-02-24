@@ -8,15 +8,15 @@ public class DBManager {
 
     public DBManager() {
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:src/hw6/resources/sqlite_db.s3db");
+            connection = DriverManager.getConnection("jdbc:sqlite:src/hw6/main/resources/sqlite_db.s3db");
             if (connection != null) {
-                System.out.println("Соединение установлено!");
+                LogManager.LOG.trace("Соединение c БД установлено");
                 statement = connection.createStatement();
                 addRecords();
             }
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
-            System.out.println("Ошибка!");
+            LogManager.LOG.trace("Ошибка подключения к БД!");
         }
     }
 

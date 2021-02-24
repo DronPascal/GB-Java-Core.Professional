@@ -18,15 +18,16 @@ public class MyServer {
     }
 
     public MyServer() {
+
         dbManager = new DBManager();
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {
             authService = new BaseAuthService(dbManager);
             authService.start();
             clients = new ArrayList<>();
             while (true) {
-                System.out.println("Ожидаем поключение клиентов");
+                LogManager.LOG.trace("Ожидаем поключение клиентов");
                 Socket socket = serverSocket.accept();
-                System.out.println("Клиент подключился");
+                LogManager.LOG.trace("Клиент подключился");
                 new ClientHandler(this, socket);
             }
         } catch (IOException e) {
@@ -51,7 +52,7 @@ public class MyServer {
     public synchronized void sendMsgToClient(ClientHandler from, String nickTo, String msg) {
         for (ClientHandler client : clients) {
             if (client.getNick().equals(nickTo)) {
-                System.out.printf("Отправляем личное сообщение от %s, кому %s", from.getNick(), nickTo);
+                LogManager.LOG.trace("Отправляем личное сообщение от " + from.getNick() + ", кому " + nickTo);
                 Message message = new Message();
                 message.setNick(from.getNick());
                 message.setMessage(msg);
@@ -59,7 +60,7 @@ public class MyServer {
                 return;
             }
         }
-        System.out.printf("Клиент с ником %s не подюклчен к чату", nickTo);
+        LogManager.LOG.trace("Клиент с ником " + nickTo + " не подюклчен к чату");
         Message message = new Message();
         message.setMessage("Клиент с этим ником не подключен к чату");
         from.sendMessage(message);
