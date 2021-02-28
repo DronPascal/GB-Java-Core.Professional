@@ -4,22 +4,22 @@ import annotations.Test;
 
 public class ClassForTest3 {
     @BeforeSuite
-    public void methodAfter(){
+    public static void methodAfter() {
         System.out.println("processing before method...");
     }
 
     @Test(priority = 2)
-    public void method2(){
+    public static void method2() {
         System.out.println("test of method2...");
     }
 
     @AfterSuite
-    public void methodBefore(){
+    public static void methodBefore() {
         System.out.println("processing after method...");
     }
 
     @AfterSuite
-    public void methodBefore2(){
+    public static void methodBefore2() {
         System.out.println("processing after method...");
     }
 }

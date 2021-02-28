@@ -37,8 +37,6 @@ public class Tester {
         if (beforeAntCount > 1 || afterAntCount > 1) {
             throw new RuntimeException();
         }
-        // testing startup
-        Constructor constructor = testedClass.getDeclaredConstructor();
         // @test methods
         for (Map.Entry<Integer, ArrayList<Method>> entry : methodsHashmap.entrySet()) {
             Integer key = entry.getKey();
@@ -46,13 +44,11 @@ public class Tester {
             System.out.println("Priority:" + key);
             for (Method method : list) {
                 System.out.println("Testing method: " + method);
-                Object testInstance = constructor.newInstance();
                 if (beforeMethod != null)
-                    beforeMethod.invoke(testInstance);
-                method.invoke(testInstance);
+                    beforeMethod.invoke(null);
+                method.invoke(null);
                 if (afterMethod != null)
-                    afterMethod.invoke(testInstance);
-
+                    afterMethod.invoke(null);
             }
         }
     }
