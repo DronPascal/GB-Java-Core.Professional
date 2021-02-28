@@ -1,3 +1,7 @@
+import annotations.AfterSuite;
+import annotations.BeforeSuite;
+import annotations.Test;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

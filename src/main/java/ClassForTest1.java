@@ -1,3 +1,7 @@
+import annotations.AfterSuite;
+import annotations.BeforeSuite;
+import annotations.Test;
+
 public class ClassForTest1 {
     @BeforeSuite
     public void methodAfter(){
@@ -19,7 +23,7 @@ public class ClassForTest1 {
         System.out.println("test of method2...");
     }
 
-    @Test (priority = 10)
+    @Test(priority = 10)
     public void method3(){
         System.out.println("test of method2...");
     }
