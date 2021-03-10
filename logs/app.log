@@ -1,0 +1,126 @@
+{
+  "instant" : {
+    "epochSecond" : 1614190732,
+    "nanoOfSecond" : 266551600
+  },
+  "thread" : "main",
+  "level" : "TRACE",
+  "loggerName" : "hw6.server.MyServer",
+  "message" : "Соединение c БД установлено",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 1,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1614190732,
+    "nanoOfSecond" : 340354400
+  },
+  "thread" : "main",
+  "level" : "TRACE",
+  "loggerName" : "hw6.server.MyServer",
+  "message" : "Сервис авторизации запущен",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 1,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1614190732,
+    "nanoOfSecond" : 341351500
+  },
+  "thread" : "main",
+  "level" : "TRACE",
+  "loggerName" : "hw6.server.MyServer",
+  "message" : "Ожидаем поключение клиентов",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 1,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1614190799,
+    "nanoOfSecond" : 646302300
+  },
+  "thread" : "main",
+  "level" : "TRACE",
+  "loggerName" : "hw6.server.MyServer",
+  "message" : "Соединение c БД установлено",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 1,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1614190799,
+    "nanoOfSecond" : 703150700
+  },
+  "thread" : "main",
+  "level" : "TRACE",
+  "loggerName" : "hw6.server.MyServer",
+  "message" : "Сервис авторизации запущен",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 1,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1614190799,
+    "nanoOfSecond" : 704148800
+  },
+  "thread" : "main",
+  "level" : "TRACE",
+  "loggerName" : "hw6.server.MyServer",
+  "message" : "Ожидаем поключение клиентов",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 1,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1614203880,
+    "nanoOfSecond" : 444909300
+  },
+  "thread" : "main",
+  "level" : "TRACE",
+  "loggerName" : "hw6.server.MyServer",
+  "message" : "Соединение c БД установлено",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 1,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1614203880,
+    "nanoOfSecond" : 499762700
+  },
+  "thread" : "main",
+  "level" : "TRACE",
+  "loggerName" : "hw6.server.MyServer",
+  "message" : "Сервис авторизации запущен",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 1,
+  "threadPriority" : 5
+}
+{
+  "instant" : {
+    "epochSecond" : 1614203880,
+    "nanoOfSecond" : 499762700
+  },
+  "thread" : "main",
+  "level" : "TRACE",
+  "loggerName" : "hw6.server.MyServer",
+  "message" : "Ожидаем поключение клиентов",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 1,
+  "threadPriority" : 5
+}
