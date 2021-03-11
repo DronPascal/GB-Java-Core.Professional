@@ -10,7 +10,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+
       <module name="Java-Core.Professional" target="15" />
+
     </bytecodeTargetLevel>
   </component>
 </project>
